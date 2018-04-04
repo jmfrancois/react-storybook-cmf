@@ -16,21 +16,22 @@ export default {
 		if (!state) {
 			state = null;
 		}
-		add(storyName, () => (
-			<CMFStory
-				state={state}
-				reducer={options.reducer}
-				enhancer={options.enhancer}
-				middleware={options.middleware}
-			>
-				{storyFn()}
-			</CMFStory>
-		), { showInline: true });
+		add(
+			storyName,
+			() => (
+				<CMFStory
+					state={state}
+					reducer={options.reducer}
+					enhancer={options.enhancer}
+					middleware={options.middleware}
+					sagaMiddleware={options.sagaMiddleware}
+				>
+					{storyFn()}
+				</CMFStory>
+			),
+			{ showInline: true },
+		);
 	},
 };
 
-export {
-	CMFDecorator,
-	CMFStory,
-	register,
-};
+export { CMFDecorator, CMFStory, register };
