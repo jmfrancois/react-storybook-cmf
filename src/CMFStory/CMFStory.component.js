@@ -2,7 +2,7 @@ import React from 'react';
 import { all, fork } from 'redux-saga/effects';
 import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
-import { store, RegistryProvider, api } from '@talend/react-cmf';
+import api, { store, RegistryProvider } from '@talend/react-cmf';
 import mock from '@talend/react-cmf/lib/mock';
 
 function* initSagaMiddleWare() {
